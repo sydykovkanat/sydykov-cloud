@@ -23,7 +23,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - '8000:8000'
+      - '8002:8000'
     environment:
       - NODE_ENV=production
       - POSTGRES_USER=${POSTGRES_USER}
