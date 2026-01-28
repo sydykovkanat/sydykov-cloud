@@ -1,0 +1,21 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  objectKey String   @unique
+  filename  String
+  mimeType  String
+  size      Int
+  isPublic  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("media")
+}
